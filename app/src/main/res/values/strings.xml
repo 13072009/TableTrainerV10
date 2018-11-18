@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Tabel træner</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hjem">Hjem</string>
+    <string name="tabel_1">1-tabellen</string>
+    <string name="tabel_2">2-tabellen</string>
+    <string name="tabel_3">3-tabellen</string>
+    <string name="tabel_5">5-tabellen</string>
+    <string name="tabel_6">6-tabellen</string>
+    <string name="tabel_7">7-tabellen</string>
+    <string name="tabel_8">8-tabellen</string>
+    <string name="tabel_9">9-tabellen</string>
+    <string name="tabel_10">10-tabellen</string>
+    <string name="tr_n">Træn</string>
+    <string name="ops_tning">Opsætning</string>
+    <string name="tabel_4">4-tabellen</string>
+    <string name="closeDrawer">Navigation View</string>
+    <string name="openDrawer">Navigation View Closed</string>
+</resources>

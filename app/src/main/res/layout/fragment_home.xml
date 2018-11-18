@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".HomeFragment"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_centerHorizontal="true">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Velkommen til Tabel træner" />
+    </LinearLayout>
+
+
+    <GridLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        >
+
+
+        <TextView
+            android:text="Vælg tabel"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_columnWeight="1"
+
+            />
+        <Spinner
+            android:id="@+id/spinnerTable"
+            android:layout_width="2dp"
+            android:layout_height="40dp"
+            android:layout_columnWeight="1"
+            android:orderInCategory="100"
+            android:showAsAction="never"
+
+            />
+
+        <Button
+            android:id="@+id/Lern"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_columnWeight="1"
+
+            android:text="Lær">
+        </Button>
+        <Button
+            android:id="@+id/Train"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_columnWeight="1"
+
+            android:text="Træn">
+        </Button>
+
+        <TextView
+            android:text="Hvor lang vil du træne?"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_columnWeight="1"
+            />
+        <Spinner
+            android:id="@+id/spinnerTimer"
+            android:layout_width="2dp"
+            android:layout_height="40dp"
+            android:layout_columnWeight="1"
+            android:orderInCategory="100"
+            android:showAsAction="never"
+            />
+
+        <Button
+            android:id="@+id/Start"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_columnWeight="1"
+
+            android:text="Start">
+        </Button>
+        <Button
+            android:id="@+id/Stop"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_columnWeight="1"
+
+            android:text="Stop">
+        </Button>
+    </GridLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home" />
+
+</LinearLayout>

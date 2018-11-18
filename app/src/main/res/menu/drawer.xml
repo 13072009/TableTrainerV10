@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--This ensures only one item can be checked of the items in the group -->
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/main"
+            android:checked="true"
+            android:icon="@drawable/ic_home_black"
+            android:title="@string/hjem" />
+
+        <item
+        android:id="@+id/tabel_1"
+        android:checked="false"
+        android:title="@string/tabel_1" />
+
+        <item
+            android:id="@+id/tabel_2"
+            android:checked="false"
+            android:title="@string/tabel_2" />
+
+        <item
+            android:id="@+id/tabel_3"
+            android:checked="false"
+            android:title="@string/tabel_3" />
+
+        <item
+            android:id="@+id/tabel_4"
+            android:checked="false"
+            android:title="@string/tabel_4" />
+
+        <item
+            android:id="@+id/tabel_5"
+            android:checked="false"
+            android:title="@string/tabel_5" />
+
+        <item
+            android:id="@+id/tabel_6"
+            android:checked="false"
+            android:title="@string/tabel_6" />
+        <item
+            android:id="@+id/tabel_7"
+            android:checked="false"
+            android:title="@string/tabel_7" />
+
+        <item
+            android:id="@+id/tabel_8"
+            android:checked="false"
+            android:title="@string/tabel_8" />
+
+        <item
+            android:id="@+id/tabel_9"
+            android:checked="false"
+            android:title="@string/tabel_9" />
+        <item
+            android:id="@+id/tabel_10"
+            android:checked="false"
+            android:title="@string/tabel_10" />
+
+        <item
+            android:id="@+id/trainer"
+            android:checked="false"
+            android:title="@string/tr_n" />
+
+
+    </group>
+</menu>
