@@ -51,7 +51,7 @@
             android:layout_height="40dp"
             android:layout_columnWeight="1"
 
-            android:text="Lær">
+            android:text="@string/l_r">
         </Button>
         <Button
             android:id="@+id/Train"
@@ -63,7 +63,7 @@
         </Button>
 
         <TextView
-            android:text="Hvor lang vil du træne?"
+            android:text="@string/hvor_lang_vil_du_tr_ne"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginLeft="5dp"
@@ -83,8 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_columnWeight="1"
-
-            android:text="Start">
+            android:text="@string/start">
         </Button>
         <Button
             android:id="@+id/Stop"
@@ -92,7 +91,7 @@
             android:layout_height="40dp"
             android:layout_columnWeight="1"
 
-            android:text="Stop">
+            android:text="@string/stop">
         </Button>
     </GridLayout>
     <ImageView

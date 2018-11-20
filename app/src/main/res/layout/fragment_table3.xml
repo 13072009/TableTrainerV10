@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".Table3Fragment"
     android:orientation="vertical">
+    <Button
+        android:id="@+id/Train3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Træn">
+    </Button>
 
     <ImageView
         android:layout_width="match_parent"

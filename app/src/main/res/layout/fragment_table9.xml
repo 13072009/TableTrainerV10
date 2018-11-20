@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Table9Fragment">
+    <Button
+        android:id="@+id/Train9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Træn">
+    </Button>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

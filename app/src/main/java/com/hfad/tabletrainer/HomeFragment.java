@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-        final Integer[] minuterArr = { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60};
+        final Integer[] minuterArr = {1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60};
         final Integer[] tableArr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         textViewTime =  this.getActivity().findViewById(R.id.timerView);
         //The spinner is defined in our xml file
@@ -124,42 +124,62 @@ public class HomeFragment extends Fragment {
                     case 1:
                         fragment = new Table1Fragment();
                         title = getResources().getString(R.string.tabel_1);
+                        MainActivity.table.setTable(1);
+                        MainActivity.table.createAnswers();
                         break;
                     case 2:
                         fragment = new Table2Fragment();
                         title = getResources().getString(R.string.tabel_2);
+                        MainActivity.table.setTable(2);
+                        MainActivity.table.createAnswers();
                         break;
                     case 3:
                         fragment = new Table3Fragment();
                         title = getResources().getString(R.string.tabel_3);
+                        MainActivity.table.setTable(3);
+                        MainActivity.table.createAnswers();
                         break;
                     case 4:
                         fragment = new Table4Fragment();
                         title = getResources().getString(R.string.tabel_4);
+                        MainActivity.table.setTable(4);
+                        MainActivity.table.createAnswers();
                         break;
                     case 5:
                         fragment = new Table5Fragment();
                         title = getResources().getString(R.string.tabel_5);
+                        MainActivity.table.setTable(5);
+                        MainActivity.table.createAnswers();
                         break;
                     case 6:
                         fragment = new Table6Fragment();
                         title = getResources().getString(R.string.tabel_6);
+                        MainActivity.table.setTable(6);
+                        MainActivity.table.createAnswers();
                         break;
                     case 7:
                         fragment = new Table7Fragment();
                         title = getResources().getString(R.string.tabel_7);
+                        MainActivity.table.setTable(7);
+                        MainActivity.table.createAnswers();
                         break;
                     case 8:
                         fragment = new Table8Fragment();
                         title = getResources().getString(R.string.tabel_8);
+                        MainActivity.table.setTable(8);
+                        MainActivity.table.createAnswers();
                         break;
                     case 9:
                         fragment = new Table9Fragment();
                         title = getResources().getString(R.string.tabel_9);
+                        MainActivity.table.setTable(9);
+                        MainActivity.table.createAnswers();
                         break;
                     case 10:
                         fragment = new Table10Fragment();
                         title = getResources().getString(R.string.tabel_10);
+                        MainActivity.table.setTable(10);
+                        MainActivity.table.createAnswers();
                         break;
 
 

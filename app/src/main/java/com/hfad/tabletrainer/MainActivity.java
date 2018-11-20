@@ -1,5 +1,7 @@
 package com.hfad.tabletrainer;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -13,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Defining Variables
     private Toolbar toolbar;
+  //  Dialog dialog;
     //The navigationview
     private NavigationView navigationView;
     //our layout for the navigationdrawer
@@ -36,12 +40,14 @@ public class MainActivity extends AppCompatActivity {
     static Time  time  =  new Time(10);
     static int   lastTabSel = 1, lastTimSel = 2;
 
+    Context context;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = this;
 
 
         //make a new timer
@@ -94,60 +100,70 @@ public class MainActivity extends AppCompatActivity {
                                 title = getResources().getString(R.string.tabel_1);
                                 MainActivity.table.setTable(1);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 0;
                                 break;
                             case R.id.tabel_2:
                                 fragment = new Table2Fragment();
                                 title = getResources().getString(R.string.tabel_2);
                                 MainActivity.table.setTable(2);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 1;
                                 break;
                             case R.id.tabel_3:
                                 fragment = new Table3Fragment();
                                 title = getResources().getString(R.string.tabel_3);
                                 MainActivity.table.setTable(3);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 2;
                                 break;
                             case R.id.tabel_4:
                                 fragment = new Table4Fragment();
                                 title = getResources().getString(R.string.tabel_4);
                                 MainActivity.table.setTable(4);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 3;
                                 break;
                             case R.id.tabel_5:
                                 fragment = new Table5Fragment();
                                 title = getResources().getString(R.string.tabel_5);
                                 MainActivity.table.setTable(5);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 4;
                                 break;
                             case R.id.tabel_6:
                                 fragment = new Table6Fragment();
                                 title = getResources().getString(R.string.tabel_6);
                                 MainActivity.table.setTable(6);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 5;
                                 break;
                             case R.id.tabel_7:
                                 fragment = new Table7Fragment();
                                 title = getResources().getString(R.string.tabel_7);
                                 MainActivity.table.setTable(7);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 6;
                                 break;
                             case R.id.tabel_8:
                                 fragment = new Table8Fragment();
                                 title = getResources().getString(R.string.tabel_8);
                                 MainActivity.table.setTable(8);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 7;
                                 break;
                             case R.id.tabel_9:
                                 fragment = new Table9Fragment();
                                 title = getResources().getString(R.string.tabel_9);
                                 MainActivity.table.setTable(9);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 8;
                                 break;
                             case R.id.tabel_10:
                                 fragment = new Table10Fragment();
                                 title = getResources().getString(R.string.tabel_10);
                                 MainActivity.table.setTable(10);
                                 MainActivity.table.createAnswers();
+                                lastTabSel = 9;
                                 break;
                             case R.id.trainer:
                                 fragment = new TrainerHomeFragment();
@@ -248,6 +264,25 @@ public class MainActivity extends AppCompatActivity {
                 if(min==0&&sec==0)
                 {
                     time.setRun(false);
+                    Dialog dialog;
+                    dialog = new Dialog(context);
+                    dialog.setTitle(R.string.Done); //hardcoded - should be in strings.xml!
+
+
+                 /**   TextView textView;
+                    textView = new TextView(context);
+                    textView.setText(R.string.doneText);
+                    textView.setPadding(20, 0, 20, 20);
+
+                    dialog.setContentView(textView);
+
+                    ImageView image = new ImageView(context);
+                    image.setImageResource(R.drawable.header);
+                    image.setPadding(10,50,10,10);
+                    dialog.setContentView(image);**/
+                 dialog.setContentView(R.layout.time_done);
+
+                    dialog.show();
                 }
                 else
                 {

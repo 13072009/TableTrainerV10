@@ -6,6 +6,13 @@
     android:orientation="vertical"
     tools:context=".Table1Fragment">
 
+    <Button
+        android:id="@+id/Train1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Træn">
+    </Button>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,5 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/handeret"/>
+
 
 </LinearLayout>
