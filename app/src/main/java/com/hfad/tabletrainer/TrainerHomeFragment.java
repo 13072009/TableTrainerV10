@@ -4,11 +4,13 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 
@@ -44,6 +46,64 @@ public class TrainerHomeFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        Button buttonTrainer1 = (Button) v.findViewById(R.id.TrainB1);
+        buttonTrainer1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Fragment fragment = null;
+                String title= "";
+                fragment = new Trainer1Fragment();
+                title = getResources().getString(R.string.tr_n);
+
+                if (fragment != null) {
+                    android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frame, fragment);
+                    fragmentTransaction.commit();
+                    ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(title);
+                }
+            }
+        });
+        Button buttonTrainer2 = (Button) v.findViewById(R.id.TrainB2);
+        buttonTrainer2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Fragment fragment = null;
+                String title= "";
+                fragment = new Trainer2Fragment();
+                title = getResources().getString(R.string.tr_n);
+
+                if (fragment != null) {
+                    android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frame, fragment);
+                    fragmentTransaction.commit();
+                    ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(title);
+                }
+            }
+        });
+        Button buttonTrainer3 = (Button) v.findViewById(R.id.TrainB3);
+        buttonTrainer3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Fragment fragment = null;
+                String title= "";
+                fragment = new Trainer3Fragment();
+                title = getResources().getString(R.string.tr_n);
+
+                if (fragment != null) {
+                    android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frame, fragment);
+                    fragmentTransaction.commit();
+                    ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(title);
+                }
             }
         });
         return v;

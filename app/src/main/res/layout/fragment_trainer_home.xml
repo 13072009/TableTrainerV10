@@ -3,14 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".TrainerHomeFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_centerHorizontal="true"
         android:orientation="horizontal">
 
     <TextView
@@ -26,8 +23,30 @@
         android:layout_weight="1"
         android:orderInCategory="100"
         android:showAsAction="never"
-
         />
+
     </LinearLayout>
+    <Button
+        android:id="@+id/TrainB1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Træn 1">
+    </Button>
+
+    <Button
+        android:id="@+id/TrainB2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Træn 2">
+    </Button>
+
+    <Button
+        android:id="@+id/TrainB3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Træn 3">
+    </Button>
+
+
 
 </LinearLayout>
