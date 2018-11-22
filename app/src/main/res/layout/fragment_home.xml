@@ -49,6 +49,7 @@
             android:id="@+id/Lern"
             android:layout_width="0dp"
             android:layout_height="40dp"
+            android:background="@drawable/button_style"
             android:layout_columnWeight="1"
 
             android:text="@string/l_r">
@@ -57,6 +58,7 @@
             android:id="@+id/Train"
             android:layout_width="0dp"
             android:layout_height="40dp"
+            android:background="@drawable/button_style"
             android:layout_columnWeight="1"
 
             android:text="Træn">
@@ -83,6 +85,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_columnWeight="1"
+            android:background="@drawable/button_style"
             android:text="@string/start">
         </Button>
         <Button
@@ -90,7 +93,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_columnWeight="1"
-
+            android:background="@drawable/button_style"
             android:text="@string/stop">
         </Button>
     </GridLayout>

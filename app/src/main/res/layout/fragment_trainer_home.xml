@@ -30,6 +30,7 @@
         android:id="@+id/TrainB1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
         android:text="Træn 1">
     </Button>
 
@@ -37,6 +38,7 @@
         android:id="@+id/TrainB2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
         android:text="Træn 2">
     </Button>
 
@@ -44,6 +46,7 @@
         android:id="@+id/TrainB3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
         android:text="Træn 3">
     </Button>
 
