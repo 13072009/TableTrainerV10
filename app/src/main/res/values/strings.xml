@@ -20,8 +20,12 @@
     <string name="openDrawer">Navigation View Closed</string>
     <string name="Done">Du er færdig</string>
     <string name="doneText">Du har gjort det godt for i dag!</string>
-    <string name="hvor_lang_vil_du_tr_ne">Hvor lang vil du træne?</string>
+    <string name="hvor_lang_vil_du_tr_ne">Hvor lang tid vil du træne?</string>
     <string name="l_r">Lær</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
+    <string name="tr_n_1">Træn 1</string>
+    <string name="tr_n_2">Træn 2</string>
+    <string name="tr_n_3">Træn 3</string>
+    <string name="v_lg_tabel">Vælg tabel</string>
 </resources>

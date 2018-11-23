@@ -5,50 +5,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".TrainerHomeFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="83dp"
         android:orientation="horizontal">
 
-    <TextView
-        android:text="Vælg tabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
-    <Spinner
-        android:id="@+id/spinnerTableTr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="@string/v_lg_tabel" />
+
+        <Spinner
+            android:id="@+id/spinnerTableTr"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:orderInCategory="100"
+            android:showAsAction="never" />
 
     </LinearLayout>
+
     <Button
         android:id="@+id/TrainB1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
-        android:text="Træn 1">
-    </Button>
+        android:text="@string/tr_n_1"></Button>
 
     <Button
         android:id="@+id/TrainB2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
-        android:text="Træn 2">
-    </Button>
+        android:text="@string/tr_n_2"></Button>
 
     <Button
         android:id="@+id/TrainB3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
-        android:text="Træn 3">
-    </Button>
+        android:text="@string/tr_n_3"></Button>
 
 
 
