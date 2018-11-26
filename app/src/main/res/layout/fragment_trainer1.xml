@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textSize="30sp"
             android:text="" />
         <TextView
             android:id="@+id/statusAnsvTr1"
@@ -34,7 +35,7 @@
             android:shadowDy="1"
             android:textSize="30sp"
             android:gravity="center"
-            android:text="2,4,...,8,...,12,14,...,18,20" />
+            android:text="" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,6 +52,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="start"
             android:gravity="center"
+            android:digits="1,2,3,4,5,6,7,8,9,0,+"
             android:hint="svar 1"
             android:layout_weight="1"
             android:inputType="text"
@@ -66,6 +68,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="start"
             android:gravity="center"
+            android:digits="1,2,3,4,5,6,7,8,9,0,+"
             android:hint="svar 2"
             android:layout_weight="1"
             android:inputType="text"
@@ -81,6 +84,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="start"
             android:gravity="center"
+            android:digits="1,2,3,4,5,6,7,8,9,0,+"
             android:hint="svar 3"
             android:layout_weight="1"
             android:inputType="text"
@@ -97,7 +101,7 @@
             android:layout_margin="0dp"
             android:layout_weight="1"
             android:background="@drawable/button_style"
-            android:text="Tjek"/>
+            android:text="@string/tjek"/>
         <Button
             android:id="@+id/buttonNext"
             android:layout_width="match_parent"
@@ -105,7 +109,7 @@
             android:layout_margin="0dp"
             android:layout_weight="1"
             android:background="@drawable/button_style"
-            android:text="Næste"/>
+            android:text="@string/n_ste"/>
         <Button
             android:id="@+id/buttonBack"
             android:layout_width="match_parent"
@@ -113,7 +117,7 @@
             android:layout_margin="0dp"
             android:layout_weight="1"
             android:background="@drawable/button_style"
-            android:text="Tilbage"/>
+            android:text="@string/tilbage"/>
 
     </LinearLayout>
 </LinearLayout>

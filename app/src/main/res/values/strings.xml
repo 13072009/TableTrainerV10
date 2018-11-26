@@ -28,4 +28,7 @@
     <string name="tr_n_2">Træn 2</string>
     <string name="tr_n_3">Træn 3</string>
     <string name="v_lg_tabel">Vælg tabel</string>
+    <string name="tjek">Tjek</string>
+    <string name="n_ste">Næste</string>
+    <string name="tilbage">Tilbage</string>
 </resources>

@@ -38,7 +38,7 @@ public class TrainerHomeFragment extends Fragment {
         spinnerTable.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.table.setTable(position);
+                MainActivity.table.setTable(position+1);
                 MainActivity.table.createAnswers();
                 MainActivity.lastTabSel = position;
             }
@@ -58,7 +58,14 @@ public class TrainerHomeFragment extends Fragment {
                 Fragment fragment = null;
                 String title= "";
                 fragment = new Trainer1Fragment();
-                title = getResources().getString(R.string.tr_n);
+                if(MainActivity.table.getTable()<=10)
+                {
+                    title = "Træn 1 (Tabel: "+MainActivity.table.getTable()+")";
+                }
+                else
+                {
+                    title = "Træn 1 (MIX)";
+                }
 
                 if (fragment != null) {
                     android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
@@ -77,7 +84,14 @@ public class TrainerHomeFragment extends Fragment {
                 Fragment fragment = null;
                 String title= "";
                 fragment = new Trainer2Fragment();
-                title = getResources().getString(R.string.tr_n);
+                if(MainActivity.table.getTable()<=10)
+                {
+                    title = "Træn 2 (Tabel: "+MainActivity.table.getTable()+")";
+                }
+                else
+                {
+                    title = "Træn 2 (MIX)";
+                }
 
                 if (fragment != null) {
                     android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
@@ -96,7 +110,14 @@ public class TrainerHomeFragment extends Fragment {
                 Fragment fragment = null;
                 String title= "";
                 fragment = new Trainer3Fragment();
-                title = getResources().getString(R.string.tr_n);
+                if(MainActivity.table.getTable()<=10)
+                {
+                    title = "Træn 3 (Tabel: "+MainActivity.table.getTable()+")";
+                }
+                else
+                {
+                    title = "Træn 3 (MIX)";
+                }
 
                 if (fragment != null) {
                     android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();

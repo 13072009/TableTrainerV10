@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private Timer timer;
     TextView textViewTime;
+    static TextView textViewPoint;
     private int min, sec;
 
     static Table table = new Table(1);
@@ -62,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
         // Initializing Toolbar and setting it as the actionbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        textViewPoint = findViewById(R.id.Point);
+        table.setPoint(0);
+        textViewPoint.setText("Point: "+table.getPoint());
 
         //Initializing NavigationView
         navigationView = findViewById(R.id.navigation_view);
@@ -267,21 +272,7 @@ public class MainActivity extends AppCompatActivity {
                     Dialog dialog;
                     dialog = new Dialog(context);
                     dialog.setTitle(R.string.Done); //hardcoded - should be in strings.xml!
-
-
-                 /**   TextView textView;
-                    textView = new TextView(context);
-                    textView.setText(R.string.doneText);
-                    textView.setPadding(20, 0, 20, 20);
-
-                    dialog.setContentView(textView);
-
-                    ImageView image = new ImageView(context);
-                    image.setImageResource(R.drawable.header);
-                    image.setPadding(10,50,10,10);
-                    dialog.setContentView(image);**/
-                 dialog.setContentView(R.layout.time_done);
-
+                    dialog.setContentView(R.layout.time_done);
                     dialog.show();
                 }
                 else
