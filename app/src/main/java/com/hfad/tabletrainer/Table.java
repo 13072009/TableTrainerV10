@@ -10,6 +10,9 @@ public class Table {
     }
 
     private ArrayList<Integer> answers = new ArrayList<>();
+
+
+    ArrayList<String> choose = new ArrayList<String>();
     private int table;
     private String task;
     private String taskAnsw;
@@ -59,8 +62,25 @@ public class Table {
         this.point = point;
     }
 
+    public ArrayList<String> getChoose() {
+        return choose;
+    }
 
-    public void createTask()
+
+    public void createTask(int task)
+    {
+        switch (task)
+        {
+            case 1:
+                createTask1();
+                break;
+            case 2:
+                createTask2();
+        }
+
+    }
+
+    public void createTask1()
     {
         int a,b,c;
         task="";
@@ -99,6 +119,33 @@ public class Table {
         }
 
     }
+    public void createTask2()
+    {
+        task="";
+        taskAnsw="";
+        int a,b,c,d, position;
+        if(table==11 || mix)
+        {
+            setTable(rand.nextInt(10)+1);
+            createAnswers();
+            mix = true;
+        }
+        a =  rand.nextInt(10)+1;
+
+        task = table+"x"+a;
+        taskAnsw=""+(table*a);
+
+        b = (rand.nextInt(10)+1)*a;
+        c = b+4;
+        d = (table*a)+3;
+        position = rand.nextInt(3)+1;
+
+        choose.clear();
+        choose.add(""+b);
+        choose.add(""+c);
+        choose.add(""+d);
+        choose.add(position,taskAnsw);
+    }
 
     public void createAnswers()
     {
@@ -108,6 +155,7 @@ public class Table {
             answers.add(table*i);
         }
     }
+
 
 
 

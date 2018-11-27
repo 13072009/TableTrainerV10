@@ -40,7 +40,7 @@ public class Trainer1Fragment extends Fragment {
         final EditText answ1 = v.findViewById(R.id.inputAnsw1);
         final EditText answ2 = v.findViewById(R.id.inputAnsw2);
         final EditText answ3 = v.findViewById(R.id.inputAnsw3);
-        MainActivity.table.createTask();
+        MainActivity.table.createTask(1);
         tr1.setText(MainActivity.table.getTask());
 
         Button buttonContr = (Button) v.findViewById(R.id.buttonContr);
@@ -52,7 +52,7 @@ public class Trainer1Fragment extends Fragment {
                 String ansversStr2 = MainActivity.table.getTaskAnsw();
                 if(answersStr1.equalsIgnoreCase(ansversStr2) )
                 {
-                    st1.setText("Korekt");
+                    st1.setText("Korrekt");
                     st1.setTextColor(Color.GREEN);
                     MainActivity.table.setPoint(MainActivity.table.getPoint()+1);
                     MainActivity.textViewPoint.setText("Point: "+MainActivity.table.getPoint());
@@ -77,7 +77,7 @@ public class Trainer1Fragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                MainActivity.table.createTask();
+                MainActivity.table.createTask(1);
                 tr1.setText(MainActivity.table.getTask());
                 answ1.setText("");
                 answ2.setText("");
