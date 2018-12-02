@@ -27,7 +27,8 @@ public class Trainer2Fragment extends Fragment  {
     TextView tr;
     TextView st1;
     TextView st2;
-    ListView lstItems;
+    ListView listItems;
+    ArrayList<String> choose = new ArrayList<String>();
 
     public Trainer2Fragment() {
         // Required empty public constructor
@@ -41,7 +42,7 @@ public class Trainer2Fragment extends Fragment  {
         tr = v.findViewById(R.id.Tr2);
         st1 = v.findViewById(R.id.statusTr2);
         st2 = v.findViewById(R.id.statusAnsvTr2);
-        lstItems = v.findViewById(R.id.listAnsw);
+        listItems = v.findViewById(R.id.listAnsw);
         createTask();
 
 
@@ -90,39 +91,39 @@ public class Trainer2Fragment extends Fragment  {
         // Inflate the layout for this fragment
 
 
-        ArrayList<String> choose = new ArrayList<String>();
+
 
         choose = MainActivity.table.getChoose();
 
         ArrayAdapter<String> allItemsAdapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_list_item_checked,choose);
 
-        lstItems.setAdapter(allItemsAdapter);
-        lstItems.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        listItems.setAdapter(allItemsAdapter);
+        listItems.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-        lstItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-               /* String answersStr1=answ1.getText()+"; "+answ2.getText()+"; "+answ3.getText();
+               String answersStr1=choose.get(position);
                 String ansversStr2 = MainActivity.table.getTaskAnsw();
                 if(answersStr1.equalsIgnoreCase(ansversStr2) )
                 {
-                    st1.setText("Korrekt");
+                    st1.setText(getResources().getString(R.string.korr));
                     st1.setTextColor(Color.GREEN);
+                    st2.setText("");
                     MainActivity.table.setPoint(MainActivity.table.getPoint()+1);
-                    MainActivity.textViewPoint.setText("Point: "+MainActivity.table.getPoint());
                 }
                 else
                 {
-                    st1.setText("Forkert");
+                    st1.setText(getResources().getString(R.string.fork));
                     st1.setTextColor(Color.RED);
-                    st2.setText("Rigtig svar er: "+ansversStr2);
+                    st2.setText(getResources().getString(R.string.korr_sv)+" "+ansversStr2);
                     if(MainActivity.table.getPoint()>0)
                     {
                         MainActivity.table.setPoint(MainActivity.table.getPoint() - 1);
                     }
                 }
-                MainActivity.textViewPoint.setText("Point: "+MainActivity.table.getPoint());*/
+                MainActivity.textViewPoint.setText(getResources().getString(R.string.point)+MainActivity.table.getPoint());
 
             }
         });

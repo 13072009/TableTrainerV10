@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Trainer3Fragment">
+    tools:context=".Trainer4Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,27 +14,14 @@
         android:layout_centerHorizontal="true"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/statusTr3"
+            android:id="@+id/statusTr4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="30sp"
             android:text="" />
         <TextView
-            android:id="@+id/statusAnsvTr3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/Tr3"
+            android:id="@+id/Tr4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:shadowColor="#00ccff"
@@ -43,50 +30,61 @@
             android:shadowDx="1"
             android:shadowDy="1"
             android:textSize="30sp"
-
             android:layout_weight="1"
-
             android:text="" />
-        <EditText
-            android:id="@+id/inputAnswTr3"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginRight="105dp"
+    </LinearLayout>
+
+    <com.hfad.tabletrainer.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+    </com.hfad.tabletrainer.GameView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonLeft4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:ellipsize="start"
-
-            android:digits="1,2,3,4,5,6,7,8,9,0,+"
-            android:hint="svar"
+            android:layout_margin="0dp"
             android:layout_weight="1"
-            android:textSize="30sp"
-            android:inputType="text"
-            android:background="@drawable/edit_text_style"/>
+            android:background="@drawable/button_style"
+            android:text="Til venstre"/>
+        <Button
+            android:id="@+id/buttonRight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_style"
+            android:text="Til højre"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/buttonContr3"
+            android:id="@+id/buttonStartTr4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:layout_weight="1"
             android:background="@drawable/button_style"
-            android:text="@string/tjek"/>
+            android:text="@string/start"/>
         <Button
-            android:id="@+id/buttonNext3"
+            android:id="@+id/buttonStopTr4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:layout_weight="1"
             android:background="@drawable/button_style"
-            android:text="@string/n_ste"/>
+            android:text="@string/stop"/>
         <Button
-            android:id="@+id/buttonBack3"
+            android:id="@+id/buttonBackTr4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -94,6 +92,7 @@
             android:background="@drawable/button_style"
             android:text="@string/tilbage"/>
     </LinearLayout>
+
 
 
 </LinearLayout>

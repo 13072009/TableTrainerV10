@@ -22,13 +22,28 @@
     <string name="doneText">Du har gjort det godt for i dag!</string>
     <string name="hvor_lang_vil_du_tr_ne">Hvor lang tid vil du træne?</string>
     <string name="l_r">Lær</string>
-    <string name="start">Start</string>
-    <string name="stop">Stop</string>
     <string name="tr_n_1">Træn 1</string>
     <string name="tr_n_2">Træn 2</string>
     <string name="tr_n_3">Træn 3</string>
+    <string name="tr_n_4">Træn 4</string>
     <string name="v_lg_tabel">Vælg tabel</string>
     <string name="tjek">Tjek</string>
     <string name="n_ste">Næste</string>
     <string name="tilbage">Tilbage</string>
+    <string name="korr">Korrekt</string>
+    <string name="fork">Forkert</string>
+    <string name="korr_sv">Rigtig svar er:</string>
+    <string name="point">Point:</string>
+    <string name="tr_n_1M">Træn 1 (MIX)</string>
+    <string name="tr_n_1T">Træn 1 (Tabel: </string>
+    <string name="tr_n_2M">Træn 2 (MIX)</string>
+    <string name="tr_n_2T">Træn 2 (Tabel: </string>
+    <string name="tr_n_3M">Træn 3 (MIX)</string>
+    <string name="tr_n_3T">Træn 3 (Tabel: </string>
+    <string name="tr_n_4M">Træn 4 (MIX)</string>
+    <string name="tr_n_4T">Træn 4 (Tabel: </string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+
+
 </resources>

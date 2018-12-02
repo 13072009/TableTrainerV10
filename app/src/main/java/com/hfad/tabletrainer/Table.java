@@ -67,22 +67,8 @@ public class Table {
     }
 
 
-    public void createTask(int task)
+    public void createTask(int taskNum)
     {
-        switch (task)
-        {
-            case 1:
-                createTask1();
-                break;
-            case 2:
-                createTask2();
-        }
-
-    }
-
-    public void createTask1()
-    {
-        int a,b,c;
         task="";
         taskAnsw="";
         if(table==11 || mix)
@@ -91,6 +77,24 @@ public class Table {
             createAnswers();
             mix = true;
         }
+        switch (taskNum)
+        {
+            case 1:
+                createTask1();
+                break;
+            case 2:
+                createTask2();
+                break;
+            case 3:
+                createTask3();
+        }
+
+    }
+
+    public void createTask1()
+    {
+        int a,b,c;
+
         a =  rand.nextInt(5)+1;
         b = a+2;
         c = b+2;
@@ -121,23 +125,16 @@ public class Table {
     }
     public void createTask2()
     {
-        task="";
-        taskAnsw="";
         int a,b,c,d, position;
-        if(table==11 || mix)
-        {
-            setTable(rand.nextInt(10)+1);
-            createAnswers();
-            mix = true;
-        }
+
         a =  rand.nextInt(10)+1;
 
         task = table+"x"+a;
         taskAnsw=""+(table*a);
 
-        b = (rand.nextInt(10)+1)*a;
-        c = b+4;
-        d = (table*a)+3;
+        b = (rand.nextInt(10)+1)*table+2;
+        c = b+2;
+        d = c+5;
         position = rand.nextInt(3)+1;
 
         choose.clear();
@@ -147,7 +144,16 @@ public class Table {
         choose.add(position,taskAnsw);
     }
 
-    public void createAnswers()
+    public void createTask3()
+    {
+        int a;
+        a = rand.nextInt(10) + 1;
+
+        task = table + "x" + a;
+        taskAnsw = "" + (table * a);
+    }
+
+        public void createAnswers()
     {
         answers = new ArrayList<>();
         for (int i = 1; i < 11; i++) {

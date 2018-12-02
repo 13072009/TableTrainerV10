@@ -15,10 +15,12 @@
     </Button>
 
     <ImageView
+        android:id="@+id/imgTab1tr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/tab1tr"/>
     <ImageView
+        android:id="@+id/imgTab1Htr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/handeret"/>

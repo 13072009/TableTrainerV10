@@ -60,11 +60,11 @@ public class TrainerHomeFragment extends Fragment {
                 fragment = new Trainer1Fragment();
                 if(MainActivity.table.getTable()<=10)
                 {
-                    title = "Træn 1 (Tabel: "+MainActivity.table.getTable()+")";
+                    title =  getResources().getString(R.string.tr_n_1T)+MainActivity.table.getTable()+")";
                 }
                 else
                 {
-                    title = "Træn 1 (MIX)";
+                    getResources().getString(R.string.tr_n_1M);
                 }
 
                 if (fragment != null) {
@@ -86,11 +86,11 @@ public class TrainerHomeFragment extends Fragment {
                 fragment = new Trainer2Fragment();
                 if(MainActivity.table.getTable()<=10)
                 {
-                    title = "Træn 2 (Tabel: "+MainActivity.table.getTable()+")";
+                    title =  getResources().getString(R.string.tr_n_2M)+MainActivity.table.getTable()+")";
                 }
                 else
                 {
-                    title = "Træn 2 (MIX)";
+                    title =  getResources().getString(R.string.tr_n_2M);
                 }
 
                 if (fragment != null) {
@@ -112,11 +112,38 @@ public class TrainerHomeFragment extends Fragment {
                 fragment = new Trainer3Fragment();
                 if(MainActivity.table.getTable()<=10)
                 {
-                    title = "Træn 3 (Tabel: "+MainActivity.table.getTable()+")";
+                    title =  getResources().getString(R.string.tr_n_3T)+MainActivity.table.getTable()+")";
                 }
                 else
                 {
-                    title = "Træn 3 (MIX)";
+                    title =  getResources().getString(R.string.tr_n_3M);
+                }
+
+                if (fragment != null) {
+                    android.support.v4.app.FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frame, fragment);
+                    fragmentTransaction.commit();
+                    ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(title);
+                }
+            }
+        });
+
+        Button buttonTrainer4 = (Button) v.findViewById(R.id.TrainB4);
+        buttonTrainer4.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Fragment fragment = null;
+                String title= "";
+                fragment = new Trainer4Fragment();
+                if(MainActivity.table.getTable()<=10)
+                {
+                    title = getResources().getString(R.string.tr_n_4T)+MainActivity.table.getTable()+")";
+                }
+                else
+                {
+                    title = getResources().getString(R.string.tr_n_4M);
                 }
 
                 if (fragment != null) {

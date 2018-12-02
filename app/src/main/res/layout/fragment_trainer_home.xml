@@ -48,6 +48,13 @@
         android:background="@drawable/button_style"
         android:text="@string/tr_n_3"></Button>
 
+    <Button
+        android:id="@+id/TrainB4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:text="@string/tr_n_4"></Button>
+
 
 
 </LinearLayout>

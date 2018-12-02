@@ -52,22 +52,23 @@ public class Trainer1Fragment extends Fragment {
                 String ansversStr2 = MainActivity.table.getTaskAnsw();
                 if(answersStr1.equalsIgnoreCase(ansversStr2) )
                 {
-                    st1.setText("Korrekt");
+                    st1.setText(getResources().getString(R.string.korr));
                     st1.setTextColor(Color.GREEN);
+                    st2.setText("");
                     MainActivity.table.setPoint(MainActivity.table.getPoint()+1);
-                    MainActivity.textViewPoint.setText("Point: "+MainActivity.table.getPoint());
+
                 }
                 else
                 {
-                    st1.setText("Forkert");
+                    st1.setText(getResources().getString(R.string.fork));
                     st1.setTextColor(Color.RED);
-                    st2.setText("Rigtig svar er: "+ansversStr2);
+                    st2.setText(getResources().getString(R.string.korr_sv)+" "+ansversStr2);
                     if(MainActivity.table.getPoint()>0)
                     {
                         MainActivity.table.setPoint(MainActivity.table.getPoint() - 1);
                     }
                 }
-                MainActivity.textViewPoint.setText("Point: "+MainActivity.table.getPoint());
+                MainActivity.textViewPoint.setText(getResources().getString(R.string.point)+MainActivity.table.getPoint());
 
             }
         });
