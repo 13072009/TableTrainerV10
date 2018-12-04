@@ -6,9 +6,13 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class GameView extends View {
 
 	Game game;
+	private ArrayList<Ball> balls = new ArrayList<>();
+	private Ball ball;
     int h,w, counter; //used for storing our height and width of the view
 
 
@@ -47,65 +51,34 @@ public class GameView extends View {
 		game.setSize(h,w);
 
 		Paint paint = new Paint();
-		game.setWogy(h-150);
-		canvas.drawBitmap(game.getWagBitmap(), game.getWogx(),game.getWogy(), paint);
-		//canvas.drawColor(Color.BLACK);
-		//update the size for the canvas to the game.
-		/*game.setSize(h,w);
-
-
-		//draw the pacman
+		game.setWagy(h-150);
+		canvas.drawBitmap(game.getWagBitmap(), game.getWagx(),game.getWagy(), paint);
 
 		int x,y;
-		// loop through the list of goldcoins and draw them.
-		coins = game.getCoins();
-		for (int counter = 0; counter < coins.size(); counter++) {
-			coin = coins.get(counter);
-			if(coin.isTaken()==false)
+		balls = game.getBalls();
+		for (int counter = 0; counter < balls.size(); counter++) {
+			ball = balls.get(counter);
+			if(ball.isTaken()==false)
 			{
-				x=coin.getGoldx();
-				if(x>(w-game.getPacBitmap().getWidth()))
+				x=ball.getBallX();
+				/*if(x>(w-game.getPacBitmap().getWidth()))
 				{
 					x=x/2;
 					coin.setGoldx(x);
-				}
-				y = coin.getGoldy();
-				if(y>(h-game.getPacBitmap().getHeight()))//test
+				}*/
+
+				y = ball.getBallY();
+				/*if(y>(h-game.getPacBitmap().getHeight()))//test
 				{
 
 					y=y/2;
-                    coin.setGoldy(y);
-				}
+					coin.setGoldy(y);
+				}*/
 
-				canvas.drawBitmap(coin.getGoldBitmap(), x, y, paint);
+				canvas.drawBitmap(ball.getBallBitmap(), x, y, paint);
 			}
 
 		}
-
-		enemies = game.getEnemies();
-		for (int counter = 0; counter < enemies.size(); counter++) {
-			enemy = enemies.get(counter);
-
-			x=enemy.getEnemx();
-			if(x>(w-game.getPacBitmap().getWidth()))
-			{
-				x=x/2;
-				enemy.setEnemx(x);
-			}
-			y = enemy.getEnemy();
-			if(y>(h-game.getPacBitmap().getHeight()))//test
-			{
-
-				y=y/2;
-				enemy.setEnemy(y);
-			}
-
-			canvas.drawBitmap(enemy.getEnemBitmap(), x, y, paint);
-
-
-
-*/
-		super.onDraw(canvas);
 
 
 	}

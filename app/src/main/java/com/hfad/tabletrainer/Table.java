@@ -87,6 +87,8 @@ public class Table {
                 break;
             case 3:
                 createTask3();
+            case 4:
+                createTask3();
         }
 
     }
@@ -153,7 +155,7 @@ public class Table {
         taskAnsw = "" + (table * a);
     }
 
-        public void createAnswers()
+    public void createAnswers()
     {
         answers = new ArrayList<>();
         for (int i = 1; i < 11; i++) {

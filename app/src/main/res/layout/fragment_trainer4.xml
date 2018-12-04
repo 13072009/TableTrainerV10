@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/buttonLeft4"
+            android:id="@+id/buttonLeftTr4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -54,7 +54,7 @@
             android:background="@drawable/button_style"
             android:text="Til venstre"/>
         <Button
-            android:id="@+id/buttonRight"
+            android:id="@+id/buttonRightTr4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"

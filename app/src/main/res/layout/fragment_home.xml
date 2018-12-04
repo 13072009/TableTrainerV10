@@ -15,7 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Velkommen til Tabel træner" />
+        android:text="@string/velkommen"
+        android:textSize="20sp"
+        android:textColor="@color/PrimaryColor"/>
+
     </LinearLayout>
 
 
@@ -33,7 +36,8 @@
             android:layout_height="40dp"
             android:layout_marginLeft="5dp"
             android:layout_columnWeight="1"
-
+            android:textSize="15sp"
+            android:textColor="@color/PrimaryColor"
             />
         <Spinner
             android:id="@+id/spinnerTable"
@@ -51,7 +55,6 @@
             android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:layout_columnWeight="1"
-
             android:text="@string/l_r">
         </Button>
         <Button
@@ -60,7 +63,6 @@
             android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:layout_columnWeight="1"
-
             android:text="Træn">
         </Button>
 
@@ -70,6 +72,8 @@
             android:layout_height="40dp"
             android:layout_marginLeft="5dp"
             android:layout_columnWeight="1"
+            android:textSize="15sp"
+            android:textColor="@color/PrimaryColor"
             />
         <Spinner
             android:id="@+id/spinnerTimer"
@@ -97,9 +101,17 @@
             android:text="@string/stop">
         </Button>
     </GridLayout>
-    <ImageView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/home" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="392dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/home" />
+    </LinearLayout>
 
 </LinearLayout>
