@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -257,8 +258,10 @@ public class MainActivity extends AppCompatActivity {
     }
     private Runnable Timer_Tick = new Runnable() {
         public void run() {
-            String minStr, secStr;
+            String minStr, secStr, doneT;
             textViewTime = findViewById(R.id.timerView);
+            TextView dialogText;
+
 
             //This method runs in the same thread as the UI.
             // so we can draw
@@ -269,11 +272,18 @@ public class MainActivity extends AppCompatActivity {
                 if(min==0&&sec==0)
                 {
                     time.setRun(false);
+
                     Dialog dialog;
                     dialog = new Dialog(context);
-                    dialog.setTitle(R.string.Done); //hardcoded - should be in strings.xml!
+
+                    dialog.setTitle(R.string.Done);
+
                     dialog.setContentView(R.layout.time_done);
+                    dialogText =(TextView) dialog.findViewById(R.id.doneText);
+                    doneT = ""+dialogText.getText()+"Du har tjent: "+table.getPoint()+ " point.";
+                    dialogText.setText(doneT);
                     dialog.show();
+
                 }
                 else
                 {

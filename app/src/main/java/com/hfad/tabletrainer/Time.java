@@ -2,10 +2,10 @@ package com.hfad.tabletrainer;
 
 public class Time {
 
-    int minutes;
-    int seconds;
-    boolean run;
-    String time;
+    int             minutes;
+    int             seconds;
+    boolean         run;
+    String          time;
 
     public Time(int minutes) {
         this.minutes = minutes-1;

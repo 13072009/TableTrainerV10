@@ -85,13 +85,8 @@ public class Trainer2Fragment extends Fragment  {
 
     void createTask()
     {
-
         MainActivity.table.createTask(2);
         tr.setText(MainActivity.table.getTask());
-        // Inflate the layout for this fragment
-
-
-
 
         choose = MainActivity.table.getChoose();
 

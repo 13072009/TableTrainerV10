@@ -4,17 +4,18 @@ import android.graphics.Bitmap;
 
 public class Ball {
 
-    private int ballX, ballY;
-    private Bitmap ballBitmap;
-    private boolean taken;
+    private int             ballX, ballY;
+    private Bitmap          ballBitmap;
 
+    private boolean         visible;
 
-    public Ball(int ballX, int ballY, Bitmap ballBitmap, boolean taken) {
+    public Ball(int ballX, int ballY, Bitmap ballBitmap,  boolean visible) {
         this.ballX = ballX;
         this.ballY = ballY;
         this.ballBitmap = ballBitmap;
-        this.taken = taken;
+        this.visible = visible;
     }
+
 
 
     public Ball(int ballX, int ballY, Bitmap ballBitmap) {
@@ -51,12 +52,13 @@ public class Ball {
         this.ballBitmap = ballBitmap;
     }
 
-    public boolean isTaken() {
-        return taken;
+
+    public boolean isVisible() {
+        return visible;
     }
 
-    public void setTaken(boolean taken) {
-        this.taken = taken;
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
 

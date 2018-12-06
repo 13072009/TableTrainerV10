@@ -29,7 +29,7 @@ public class Trainer4Fragment extends Fragment {
 
     private int direction = 0;
     private boolean running = false;
-    private Timer wagTimer;
+    private Timer wagTimer, ballsTimer;
 
 
     public Trainer4Fragment() {
@@ -47,7 +47,7 @@ public class Trainer4Fragment extends Fragment {
 
         gameView =  v.findViewById(R.id.gameView);
 
-        game = new Game(this.getContext());
+        game = new Game(this.getContext(),tr,st1);
         game.setGameView(gameView);
         gameView.setGame(game);
 
@@ -126,6 +126,7 @@ public class Trainer4Fragment extends Fragment {
         super.onStop();
         //just to make sure if the app is killed, that we stop the timer.
         wagTimer.cancel();
+        ballsTimer.cancel();
     }
 
     void createTask() {
@@ -137,11 +138,7 @@ public class Trainer4Fragment extends Fragment {
 
     private void WagTimerMethod()
     {
-        //This method is called directly by the timer
-        //and runs in the same thread as the timer.
 
-        //We call the method that will work with the UI
-        //through the runOnUiThread method.
         getActivity().runOnUiThread(WagTimer_Tick);
 
     }
@@ -164,10 +161,34 @@ public class Trainer4Fragment extends Fragment {
         }
     };
 
+    private void BallsTimerMethod()
+    {
+        //This method is called directly by the timer
+        //and runs in the same thread as the timer.
+
+        //We call the method that will work with the UI
+        //through the runOnUiThread method.
+        getActivity().runOnUiThread(BallsTimer_Tick);
+
+    }
+    private Runnable BallsTimer_Tick = new Runnable() {
+        public void run() {
+
+            //This method runs in the same thread as the UI.
+            // so we can draw
+            if (running)
+            {
+                game.moveBalls();
+            }
+        }
+    };
+
+
     private void newTime()
     {
         //make a new timer
         wagTimer = new Timer();
+        ballsTimer = new Timer();
 
         wagTimer.schedule(new TimerTask() {
             //   @Override
@@ -176,6 +197,13 @@ public class Trainer4Fragment extends Fragment {
             }
 
         }, 0, 100);
+        ballsTimer.schedule(new TimerTask() {
+            //   @Override
+            public void run() {
+                BallsTimerMethod();
+            }
+
+        }, 0, 50);
     }
 
 }

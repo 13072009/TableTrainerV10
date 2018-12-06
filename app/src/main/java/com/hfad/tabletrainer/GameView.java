@@ -58,23 +58,10 @@ public class GameView extends View {
 		balls = game.getBalls();
 		for (int counter = 0; counter < balls.size(); counter++) {
 			ball = balls.get(counter);
-			if(ball.isTaken()==false)
+			if(ball.isVisible()==true)
 			{
 				x=ball.getBallX();
-				/*if(x>(w-game.getPacBitmap().getWidth()))
-				{
-					x=x/2;
-					coin.setGoldx(x);
-				}*/
-
 				y = ball.getBallY();
-				/*if(y>(h-game.getPacBitmap().getHeight()))//test
-				{
-
-					y=y/2;
-					coin.setGoldy(y);
-				}*/
-
 				canvas.drawBitmap(ball.getBallBitmap(), x, y, paint);
 			}
 
