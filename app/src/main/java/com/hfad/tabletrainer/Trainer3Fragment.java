@@ -101,14 +101,12 @@ public class Trainer3Fragment extends Fragment {
         return v;
     }
 
-
     void createTask() {
         st1.setText("");
         st2.setText("");
         answ.setText("");
         MainActivity.table.createTask(3);
         tr.setText(MainActivity.table.getTask());
-        // Inflate the layout for this fragment
     }
 
 }

@@ -1,6 +1,7 @@
 package com.hfad.tabletrainer;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
@@ -26,6 +27,7 @@ public class GameView extends View {
 	when we have a custom view.
 	 */
 	public GameView(Context context) {
+
 		super(context);
 
 	}
@@ -39,7 +41,6 @@ public class GameView extends View {
 	{
 		super(context,attrs,defStyleAttr);
 	}
-
 
 	//In the onDraw we put all our code that should be
 	//drawn whenever we update the screen.
@@ -61,12 +62,19 @@ public class GameView extends View {
 			if(ball.isVisible()==true)
 			{
 				x=ball.getBallX();
+				if(x>(w-ball.getBallBitmap().getWidth()))
+				{
+					x=x/2;
+					ball.setBallX(x);
+				}
 				y = ball.getBallY();
-				canvas.drawBitmap(ball.getBallBitmap(), x, y, paint);
+
+				Bitmap resizedBitmap = Bitmap.createScaledBitmap(ball.getBallBitmap(), h/8, h/8,false);
+
+				canvas.drawBitmap(resizedBitmap, x, y, paint);
 			}
 
 		}
-
 
 	}
 

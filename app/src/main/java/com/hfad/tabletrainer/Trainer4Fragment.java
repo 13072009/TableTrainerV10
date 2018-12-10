@@ -131,14 +131,11 @@ public class Trainer4Fragment extends Fragment {
 
     void createTask() {
         st1.setText("");
-        MainActivity.table.createTask(4);
         tr.setText(MainActivity.table.getTask());
-
     }
 
     private void WagTimerMethod()
     {
-
         getActivity().runOnUiThread(WagTimer_Tick);
 
     }
@@ -153,9 +150,9 @@ public class Trainer4Fragment extends Fragment {
                 {
                     game.moveWagLeft(20);
                 }
-                else if( direction == 2) {
+                else if( direction == 2)
+                {
                     game.moveWagRight(20);
-
                 }
             }
         }
@@ -163,19 +160,11 @@ public class Trainer4Fragment extends Fragment {
 
     private void BallsTimerMethod()
     {
-        //This method is called directly by the timer
-        //and runs in the same thread as the timer.
-
-        //We call the method that will work with the UI
-        //through the runOnUiThread method.
         getActivity().runOnUiThread(BallsTimer_Tick);
 
     }
     private Runnable BallsTimer_Tick = new Runnable() {
         public void run() {
-
-            //This method runs in the same thread as the UI.
-            // so we can draw
             if (running)
             {
                 game.moveBalls();

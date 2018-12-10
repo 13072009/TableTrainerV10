@@ -46,6 +46,4 @@ public class Table4Fragment extends Fragment {
         // Inflate the layout for this fragment
         return  v;
     }
-
-
 }

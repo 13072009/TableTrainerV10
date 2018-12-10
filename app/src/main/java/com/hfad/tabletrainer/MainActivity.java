@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Defining Variables
     private Toolbar toolbar;
-  //  Dialog dialog;
     //The navigationview
     private NavigationView navigationView;
     //our layout for the navigationdrawer
@@ -44,13 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
     Context context;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
-
 
         //make a new timer
         timer = new Timer();
@@ -81,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-
                         //Checking if the item is in checked state or not, if not make it in checked state
                         if (menuItem.isChecked())
                             menuItem.setChecked(false);
@@ -104,71 +100,61 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.tabel_1:
                                 fragment = new Table1Fragment();
                                 title = getResources().getString(R.string.tabel_1);
-                                MainActivity.table.setTable(1);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(1, false);
                                 lastTabSel = 0;
                                 break;
                             case R.id.tabel_2:
                                 fragment = new Table2Fragment();
                                 title = getResources().getString(R.string.tabel_2);
-                                MainActivity.table.setTable(2);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(2, false);
                                 lastTabSel = 1;
                                 break;
                             case R.id.tabel_3:
                                 fragment = new Table3Fragment();
                                 title = getResources().getString(R.string.tabel_3);
-                                MainActivity.table.setTable(3);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(3, false);
                                 lastTabSel = 2;
                                 break;
                             case R.id.tabel_4:
                                 fragment = new Table4Fragment();
                                 title = getResources().getString(R.string.tabel_4);
-                                MainActivity.table.setTable(4);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(4, false);
                                 lastTabSel = 3;
                                 break;
                             case R.id.tabel_5:
                                 fragment = new Table5Fragment();
                                 title = getResources().getString(R.string.tabel_5);
-                                MainActivity.table.setTable(5);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(5, false);
                                 lastTabSel = 4;
                                 break;
                             case R.id.tabel_6:
                                 fragment = new Table6Fragment();
                                 title = getResources().getString(R.string.tabel_6);
-                                MainActivity.table.setTable(6);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(6, false);
                                 lastTabSel = 5;
                                 break;
                             case R.id.tabel_7:
                                 fragment = new Table7Fragment();
                                 title = getResources().getString(R.string.tabel_7);
-                                MainActivity.table.setTable(7);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(7, false);
                                 lastTabSel = 6;
                                 break;
                             case R.id.tabel_8:
                                 fragment = new Table8Fragment();
                                 title = getResources().getString(R.string.tabel_8);
-                                MainActivity.table.setTable(8);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(8, false);
                                 lastTabSel = 7;
                                 break;
                             case R.id.tabel_9:
                                 fragment = new Table9Fragment();
                                 title = getResources().getString(R.string.tabel_9);
-                                MainActivity.table.setTable(9);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(9, false);
                                 lastTabSel = 8;
                                 break;
                             case R.id.tabel_10:
                                 fragment = new Table10Fragment();
                                 title = getResources().getString(R.string.tabel_10);
-                                MainActivity.table.setTable(10);
-                                MainActivity.table.createAnswers();
+                                MainActivity.table.setTable(10, false);
                                 lastTabSel = 9;
                                 break;
                             case R.id.trainer:
@@ -248,13 +234,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void TimerMethod()
     {
-        //This method is called directly by the timer
-        //and runs in the same thread as the timer.
-
-        //We call the method that will work with the UI
-        //through the runOnUiThread method.
         this.runOnUiThread(Timer_Tick);
-
     }
     private Runnable Timer_Tick = new Runnable() {
         public void run() {
@@ -262,9 +242,6 @@ public class MainActivity extends AppCompatActivity {
             textViewTime = findViewById(R.id.timerView);
             TextView dialogText;
 
-
-            //This method runs in the same thread as the UI.
-            // so we can draw
             if (time.isRun())
             {
                 min = time.getMinutes();
@@ -299,8 +276,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                //update the counter - notice this is NOT seconds in this example
-                //you need TWO counters - one for the time and one for the
                 if(time.getMinutes()>=10)
                 {
                     minStr = "" + time.getMinutes();
@@ -318,7 +293,6 @@ public class MainActivity extends AppCompatActivity {
                     secStr = "0" + time.getSeconds();
                 }
                 textViewTime.setText(minStr+":"+secStr);
-
             }
 
         }

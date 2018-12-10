@@ -1,5 +1,5 @@
+//Til at oprette en bold til Træner 4
 package com.hfad.tabletrainer;
-
 import android.graphics.Bitmap;
 
 public class Ball {
@@ -14,18 +14,6 @@ public class Ball {
         this.ballY = ballY;
         this.ballBitmap = ballBitmap;
         this.visible = visible;
-    }
-
-
-
-    public Ball(int ballX, int ballY, Bitmap ballBitmap) {
-        this.ballX = ballX;
-        this.ballY = ballY;
-        this.ballBitmap = ballBitmap;
-    }
-
-    public Ball() {
-
     }
 
     public int getBallX() {
@@ -48,11 +36,6 @@ public class Ball {
         return ballBitmap;
     }
 
-    public void setBallBitmap(Bitmap ballBitmap) {
-        this.ballBitmap = ballBitmap;
-    }
-
-
     public boolean isVisible() {
         return visible;
     }
@@ -60,11 +43,6 @@ public class Ball {
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
-
-
-
-
-
 
 
 }

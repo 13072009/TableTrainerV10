@@ -1,3 +1,4 @@
+//Oprættelse af spil til Træner 4
 package com.hfad.tabletrainer;
 
 import android.content.Context;
@@ -31,9 +32,7 @@ public class Game {
     private int h, w; //height and width of screen
     private Ball ball, nextBall;
 
-
     Random rand = new Random();
-
 
     private ArrayList<Ball> balls = new ArrayList<>();
 
@@ -87,13 +86,13 @@ public class Game {
         this.balls = balls;
     }
 
-    public void newGame()////test ne game
+    public void newGame()
     {
         wagx = 100;
         createBalls();
         gameView.invalidate(); //redraw screen
     }
-
+//////////////Wogn/////////////////////////////////////
     public void moveWagRight(int pixels) {
         if (wagx + pixels + wagBitmap.getWidth() < w + 10) {
             wagx = wagx + pixels;
@@ -107,7 +106,7 @@ public class Game {
             gameView.invalidate();
         }
     }
-
+////////////////////BOLD////////////////////////////////////////////////////
     public void createBalls() {
 
         String textNum = "";
@@ -115,35 +114,32 @@ public class Game {
         MainActivity.table.createTask(4);
 
         for (int counter = 0; counter < MainActivity.table.getAnswers().size(); counter++) {
-            //Opretter en billede med en tal
-            ballBitmap = createImage(125, 125, Color.RED, "" + MainActivity.table.getAnswers().get(counter));
+            //Opretter en billede med et tal
+            ballBitmap = createImage(90, 90, Color.RED, "" + MainActivity.table.getAnswers().get(counter));
 
             // Laver billede rundt
             ballBitmap = getCircularBitmap(ballBitmap);
 
             // Tilføjer en circul rund om
-            ballBitmap = addBorderToCircularBitmap(ballBitmap, 15, Color.BLUE);
+            ballBitmap = addBorderToCircularBitmap(ballBitmap, 10, Color.BLUE);
 
             //Tilføjer en kant rundt om
             ballBitmap = addShadowToCircularBitmap(ballBitmap, 4, Color.BLACK);
 
             if (counter == 0) {
-                ball = new Ball(200, y, ballBitmap, true);
-            } else {
-                x = rand.nextInt(600) + 150;
+                ball = new Ball(100, y, ballBitmap, true);
+            }
+            else {
+                x = rand.nextInt(900) + 100;
                 ball = new Ball(x, y, ballBitmap, false);
-
             }
 
             balls.add(ball);
         }
-
-
     }
 
-
+    //Opretter en billede
     public Bitmap createImage(int width, int height, int color, String text) {
-
 
         Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
@@ -155,19 +151,17 @@ public class Game {
         canvas.drawRect(0F, 0F, (float) width, (float) height, paint2);
 
         paint.setColor(Color.BLACK);
-        paint.setTextSize(80);
+        paint.setTextSize(60);
         paint.setTextScaleX(1);
         paint.setTextAlign(Paint.Align.CENTER);
 
-        float textY = height / 2 + 25;
+        float textY = height / 2 + 15;
         float textX = width / 2;
         canvas.drawText(text, textX, textY, paint);
 
         return bitmap;
     }
-
-
-    ///////////////////////////////
+//Laver billede til en cirkel
     protected Bitmap getCircularBitmap(Bitmap srcBitmap) {
         // Calculate the circular bitmap width with border
         int squareBitmapWidth = Math.min(srcBitmap.getWidth(), srcBitmap.getHeight());
@@ -178,7 +172,6 @@ public class Game {
                 squareBitmapWidth, // Height
                 Bitmap.Config.ARGB_8888 // Config
         );
-
 
         // Initialize a new Canvas to draw circular bitmap
         Canvas canvas = new Canvas(dstBitmap);
@@ -282,52 +275,42 @@ public class Game {
         return dstBitmap;
     }
 
-
-    ////////////////////
-
     public void moveBalls() {
-        int pixels = 10;
+        int pixels = h/100;
         for (int counter = 0; counter < balls.size(); counter++) {
             ball = balls.get(counter);
 
             if (ball.isVisible() == true) {
                 ball.setBallY(ball.getBallY() + pixels);
-
             }
-            if (ball.getBallY() > (h / 2)) {
 
-            }
             if (ball.getBallY() > h) {
                 if (counter < 9) {
                     nextBall = balls.get(counter + 1);
-                } else {
+                }
+                else {
                     nextBall = balls.get(0);
                 }
                 nextBall.setVisible(true);
-
                 ball.setBallY(10);
                 ball.setVisible(false);
             }
-
             doCollisionCheck();
             gameView.invalidate();
 
         }
     }
 
-
+//////////////////////Tjek om bold rammer vogn/////////////////////
     private int distance(int ax, int ay, int bx, int by) {
-        int dx   = ax-bx;//coin.getGoldx() - pacx;
-        int dy   = ay-by;//coin.getGoldy() - pacy;
+        int dx   = ax-bx;
+        int dy   = ay-by;
         int d = (int) Math.sqrt( dx*dx + dy*dy );
 
         return d;
     }
 
-
-
     public void doCollisionCheck() {
-
 
         for (int counter = 0; counter < balls.size(); counter++) {
             ball = balls.get(counter);

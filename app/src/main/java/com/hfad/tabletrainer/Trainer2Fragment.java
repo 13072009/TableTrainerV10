@@ -22,8 +22,6 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class Trainer2Fragment extends Fragment  {
-
-
     TextView tr;
     TextView st1;
     TextView st2;
@@ -33,7 +31,6 @@ public class Trainer2Fragment extends Fragment  {
     public Trainer2Fragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,7 +75,6 @@ public class Trainer2Fragment extends Fragment  {
                 }
             }
         });
-
 
         return v;
     }

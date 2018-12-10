@@ -24,7 +24,6 @@ public class TrainerHomeFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,8 +37,7 @@ public class TrainerHomeFragment extends Fragment {
         spinnerTable.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.table.setTable(position+1);
-                MainActivity.table.createAnswers();
+                MainActivity.table.setTable(position+1, false);
                 MainActivity.lastTabSel = position;
             }
 
@@ -64,7 +62,7 @@ public class TrainerHomeFragment extends Fragment {
                 }
                 else
                 {
-                    getResources().getString(R.string.tr_n_1M);
+                    title = getResources().getString(R.string.tr_n_1M);
                 }
 
                 if (fragment != null) {
@@ -86,7 +84,7 @@ public class TrainerHomeFragment extends Fragment {
                 fragment = new Trainer2Fragment();
                 if(MainActivity.table.getTable()<=10)
                 {
-                    title =  getResources().getString(R.string.tr_n_2M)+MainActivity.table.getTable()+")";
+                    title =  getResources().getString(R.string.tr_n_2T)+MainActivity.table.getTable()+")";
                 }
                 else
                 {

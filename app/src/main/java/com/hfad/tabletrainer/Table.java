@@ -10,8 +10,6 @@ public class Table {
     }
 
     private ArrayList<Integer> answers = new ArrayList<>();
-
-
     ArrayList<String> choose = new ArrayList<String>();
     private int table;
     private String task;
@@ -36,8 +34,6 @@ public class Table {
         this.taskAnsw = taskAnsw;
     }
 
-
-
     public ArrayList<Integer> getAnswers() {
         return answers;
     }
@@ -50,8 +46,10 @@ public class Table {
         return table;
     }
 
-    public void setTable(int table) {
+    public void setTable(int table, boolean mix)
+    {
         this.table = table;
+        this.mix = mix;
     }
 
     public int getPoint() {
@@ -73,10 +71,10 @@ public class Table {
         taskAnsw="";
         if(table==11 || mix)
         {
-            setTable(rand.nextInt(10)+1);
-            createAnswers();
-            mix = true;
+            setTable(rand.nextInt(10)+1, true);
         }
+        createAnswers();
+
         switch (taskNum)
         {
             case 1:
@@ -87,8 +85,10 @@ public class Table {
                 break;
             case 3:
                 createTask3();
+                break;
             case 4:
-                createTask3();
+                createTask4();
+                break;
         }
 
     }
@@ -96,7 +96,6 @@ public class Table {
     public void createTask1()
     {
         int a,b,c;
-
         a =  rand.nextInt(5)+1;
         b = a+2;
         c = b+2;
@@ -155,16 +154,20 @@ public class Table {
         taskAnsw = "" + (table * a);
     }
 
+    public void createTask4()
+    {
+        int a;
+        a = rand.nextInt(10) + 1;
+        task = table + "x" + a;
+        taskAnsw = "" + (table * a);
+    }
+
     public void createAnswers()
     {
-        answers = new ArrayList<>();
-        for (int i = 1; i < 11; i++) {
-
+        answers.clear();
+        for (int i = 1; i < 11; i++)
+        {
             answers.add(table*i);
         }
     }
-
-
-
-
 }

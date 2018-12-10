@@ -32,11 +32,6 @@ public class Table1Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_table1, container, false);
 
-      //  final ImageView zoom = (ImageView) v.findViewById(R.id.imgTab1tr);
-
-     //   final Animation zoomAnimation = AnimationUtils.loadAnimation(v.getContext(), R.anim.zoom_pic);
-    //    zoom.startAnimation(zoomAnimation);
-
         Button buttonTrainer = (Button) v.findViewById(R.id.Train1);
         buttonTrainer.setOnClickListener(new View.OnClickListener()
         {
@@ -56,7 +51,7 @@ public class Table1Fragment extends Fragment {
                 }
             }
         });
-        // Inflate the layout for this fragment
+
         return v;
     }
 

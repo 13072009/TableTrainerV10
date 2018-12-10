@@ -22,9 +22,7 @@ import android.widget.Toast;
 public class HomeFragment extends Fragment {
 
     TextView textViewTime;
-
     private Toolbar toolbar;
-
 
     public HomeFragment() {
         // Required empty public constructor
@@ -47,9 +45,6 @@ public class HomeFragment extends Fragment {
         // Initializing Toolbar and setting it as the actionbar
         toolbar = v.findViewById(R.id.toolbar);
 
-
-
-
         //we use a predefined simple spinner drop down,
         //you could define your own layout, so that for instance
         //there was pictures in the drop down list.
@@ -58,9 +53,6 @@ public class HomeFragment extends Fragment {
         adapterMinuter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerTime.setAdapter(adapterMinuter);
         spinnerTime.setSelection(MainActivity.lastTimSel);
-
-
-
         spinnerTime.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
@@ -82,7 +74,6 @@ public class HomeFragment extends Fragment {
                     textViewTime.setText(minStr + ":00");
                     MainActivity.lastTimSel = position;
                 }
-
             }
 
             @Override
@@ -99,8 +90,7 @@ public class HomeFragment extends Fragment {
         spinnerTable.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.table.setTable(tableArr[position]);
-                MainActivity.table.createAnswers();
+                MainActivity.table.setTable(tableArr[position], false);
                 MainActivity.lastTabSel = position;
             }
 
@@ -118,71 +108,56 @@ public class HomeFragment extends Fragment {
                 Fragment fragment = null;
                 String title= "";
                 switch ( MainActivity.table.getTable()) {
-
-                    //Replacing the main content with ContentFragment
-
                     case 1:
                         fragment = new Table1Fragment();
                         title = getResources().getString(R.string.tabel_1);
-                        MainActivity.table.setTable(1);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(1, false);
                         break;
                     case 2:
                         fragment = new Table2Fragment();
                         title = getResources().getString(R.string.tabel_2);
-                        MainActivity.table.setTable(2);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(2, false);
                         break;
                     case 3:
                         fragment = new Table3Fragment();
                         title = getResources().getString(R.string.tabel_3);
-                        MainActivity.table.setTable(3);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(3, false);
                         break;
                     case 4:
                         fragment = new Table4Fragment();
                         title = getResources().getString(R.string.tabel_4);
-                        MainActivity.table.setTable(4);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(4, false);
                         break;
                     case 5:
                         fragment = new Table5Fragment();
                         title = getResources().getString(R.string.tabel_5);
-                        MainActivity.table.setTable(5);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(5, false);
                         break;
                     case 6:
                         fragment = new Table6Fragment();
                         title = getResources().getString(R.string.tabel_6);
-                        MainActivity.table.setTable(6);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(6, false);
                         break;
                     case 7:
                         fragment = new Table7Fragment();
                         title = getResources().getString(R.string.tabel_7);
-                        MainActivity.table.setTable(7);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(7, false);
                         break;
                     case 8:
                         fragment = new Table8Fragment();
                         title = getResources().getString(R.string.tabel_8);
-                        MainActivity.table.setTable(8);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(8, false);
                         break;
                     case 9:
                         fragment = new Table9Fragment();
                         title = getResources().getString(R.string.tabel_9);
-                        MainActivity.table.setTable(9);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(9, false);
                         break;
                     case 10:
                         fragment = new Table10Fragment();
                         title = getResources().getString(R.string.tabel_10);
-                        MainActivity.table.setTable(10);
-                        MainActivity.table.createAnswers();
+                        MainActivity.table.setTable(10, false);
                         break;
-
-
 
                 } //after switch
                 if (fragment != null) {
@@ -232,8 +207,6 @@ public class HomeFragment extends Fragment {
                 MainActivity.time.setRun(false);
             }
         });
-
-
 
         return v;
 
